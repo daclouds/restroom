@@ -2,11 +2,14 @@
 //  AppDelegate.swift
 //  restroom
 //
-//  Created by 1001914 on 2015. 9. 1..
+//  Created by daclouds on 2015. 9. 1..
 //  Copyright (c) 2015년 codeport. All rights reserved.
 //
 
 import UIKit
+
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.enableLocalDatastore()
+        
+        Parse.setApplicationId("e5qpZ1Jc1l7el1KRmF5TjiEyq41vYtj7mqSpayUQ", clientKey: "lBOIvguRxWxJiHRsiNksI3pTQ1UajFYvwgGHWdBr")
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
         return true
     }
 
